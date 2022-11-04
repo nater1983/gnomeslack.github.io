@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>MATE SlackBuilds</title>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet'
+type='text/css'>
+</head>
+
+<body>
+
+   <!-- Begin Wrapper -->
+   <div id="wrapper">
+     <h2>MATE SlackBuilds</h2>
+         <!-- Begin Content -->
+         <div id="content">
+           <p>These SlackBuilds are intended to provide a means for a user to
+           build and install the <a href="https://www.mate-desktop.org">MATE Desktop
+             Environment</a> on <a
+             href="http://www.slackware.com">Slackware Linux</a>.  Some of the goals
+           of the project are:</p>
+           <ol>
+             <li>Do not replace any stock Slackware packages unless
+             absolutely necessary (thus far, no packages need to be replaced);</li>
+             <li>Keep the upstream default theme and settings;</li>
+             <li>Try and minimize outside dependencies as much as possible;
+             and</li>
+             <li>Make it easy to build and install by using standard style
+             SlackBuild scripts and slack-desc and doinst.sh files that most
+             Slackware users have become familiar with by using the <a
+               href="https://www.slackbuilds.org">SlackBuilds</a> repository.</li></ol>
+           <p>The scripts are hosted in a <a
+             href="https://github.com/mateslackbuilds/msb">Github</a> and 
+	   <a href="https://gitlab.com/mateslackbuilds/msb">Gitlab</a> so feel
+           free to test and offer suggestions, improvements, patches, etc.
+           Here are some obligatory screenshots of MATE 1.26 with its default
+           theme and background running on Slackware64-15.0:</p>
+           <div id="screenshots">
+             <a href="images/mate-1.png"><img class="image"
+               src="images/mate-1.png" width="200" height="160"/></a>
+             <a href="images/mate-2.png"><img class="image"
+               src="images/mate-2.png" width="200" height="160"/></a>
+             <a href="images/mate-3.png"><img class="image"
+               src="images/mate-3.png" width="200" height="160"/></a>
+             <a href="images/mate-4.png"><img class="image"
+               src="images/mate-4.png" width="200" height="160"/></a>
+           </div>
+           <p>FAQ:</p>
+           <ul>
+           <li>Q: Are there binary packages?</li><li>A: Yes, there are
+             packages for Slackware 15.0 x86 and x86_64 available at:
+             <a
+               href="https://slackware.uk/msb">https://slackware.uk/msb</a>.  It is still advisable to
+             clone the git repo and build the packages yourself but these
+             packages are available for your convenience.</li>
+           <li>Q: Why i don't see MATE 1.22 or newer binary packages for Slackware 14.2?</li>
+           <li>A: MATE 1.22 and newer requires newer GTK+3 library that isn't available on Slackware 14.2,
+           so MATE 1.18 is the last release that can be installed on top of Slackware 14.2. See our
+           <a href="support.html">Supported Releases</a> page.</li>
+           <li>Q: How do i manage binary packages automatically?</li>
+	   <li>A: You can use <a href="http://slakfinder.org/slackpkg+.html">slackpkg+</a>
+	   to manage binary packages. Please see
+           <a href="http://slakfinder.org/slackpkg+/src/repositories.txt">supported repositories</a>.</li>
+	   <li>Q: Is it possible to try out MATE in a live session for trial?</li>
+	   <li>A: Please have a look on <a href="https://bear.alienbase.nl/mirrors/slackware-live/">
+	   AlienBOB's Slackware Live</a> project that includes MATE Desktop.</li>
+           <li>Q: Do the scripts build and run on -current?</li><li>A: Yes,
+           based on our testing. These scripts are developed on
+           Slackware-current machines but binary packages will target for stable releases.
+	   Please be sure to read the README.TXT, KNOWN_ISSUES.TXT, and CURRENT.TXT
+	   documents as these are updated to note any potential problems or issues.</li>
+           <li>Q: So -current is officially supported?</li>
+           <li>A: Not exactly.  Since Slackware -current is a moving target,
+           there is no guarantee that MATE SlackBuilds will build or work properly
+           on Slackware -current.  Only a full installation of the latest
+           Slackware release is officially supported. <br/>
+	   We do however tried to support -current as much as we can. Please use master
+	   branch for testing with -current.</li>
+           <li>Q: I'm getting weird issues with the panel, menu, icons, or
+           other such things.  What's up?</li>
+           <li>A: This is rare, but if it happens, check the KNOWN_ISSUES.TXT
+           and other docs.  Usually, these kinds of issues occur when there
+           are conflicts with other desktop environments.  Backing up and
+           moving certain directories in the user's $HOME (such as
+           $HOME/.cache, $HOME/.config, and $HOME/.local) usually solves these
+           issues.</li>
+           <li>Q: How long does it take to build the packages?</li>
+           <li>A: All the /deps, /base and /extra packages should not take too much time to build
+           on any reasonably modern machine.</li>
+           <li>Q: Who is behind MATE SlackBuilds?</li>
+           <li>A: Willy Sudiarto Raharjo and Chess Griffin (Inactive).  Please post
+           bug reports at the Github repo or send us an email at
+           mateslackbuilds@gmail.com</li>
+	   <li>Q: Are there any IRC support for MSB Project?</li>
+	   <li>A: Yes, we have created #msb channel on <a href="https://libera.chat/">Libera network</a>.</li>
+	   <li>Q: Does this site have a backup?</li>
+	   <li>A: This site's source code is hosted at GitHub and we also have secondary domain
+	   at <a href="https://mateslackbuilds.netlify.app">https://mateslackbuilds.netlify.app/</a>.
+	   Thanks to <a href="https://www.netlify.com">Netlify</a> for providing us with Pro tier.</li>
+         </ul>
+	</div>
+		 <!-- End Content -->
+                 <div id="footer">Not affiliated with or endorsed by Slackware
+                 Linux, Patrick J. Volkerding, or the SlackBuilds.org project.
+               Slackware is a registered trademark of Patrick J. Volkerding
+               and Linux is a registered trademark of Linus Torvalds.  Use at
+             your own risk, YMMV, and all that.</div>
+   </div>
+   <!-- End Wrapper -->
+</body>
+</html>
