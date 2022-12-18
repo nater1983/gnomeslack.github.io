@@ -13,7 +13,6 @@ type='text/css'>
         <header class="entry-header">
 		<h1 class="entry-title">Repo Usage/Installation</h1>	</header><!-- .entry-header -->
 
-	
 	<div class="entry-content">
 <p>To use these packages, it&#8217;s recommended you install <a href="https://slakfinder.org/slackpkg+.html">slackpkg+</a> to manage 3rd party Slackware repositories on your systems. slackpkg+ has no arch requirements, as it&#8217;s all script based, so all systems can install and use it. My packages are all signed with my GPG Key and slackpkg+ will check and verify that for you during installs/updates.</p>
 <p>If you choose to install packages manually, without slackpkg+, that&#8217;s always an option, but keep in mind many of these packages are included in Slackware already, but we are going to be updating them. To that end you&#8217;ll need to ensure when installing them, you use &#8220;upgradepkg &#8211;install-new *.txz&#8221; on your package directory.</p>
@@ -30,13 +29,8 @@ fi</p>
 <p>if [ -x /etc/rc.d/rc.avahidnsconfd ]; then<br />
 /etc/rc.d/rc.avahidnsconfd stop</p></blockquote>
 <p>Ensure all four of those files are <strong>chmod +x</strong> as well so the daemon starts upon boot.</p>
-<p>You also need to remove a erroneous flag for gdm from <strong>/etc/rc.d/rc.4</strong>, there are two statements with gdm commands stating &#8220;<strong>gdm -nodaemon</strong>&#8221; you MUST remove the &#8220;<strong>-nodaemon</strong>&#8221; from the commands or GDM will not run at all. Please don&#8217;t be that guy.</p>
-<p>In order for GNOME to run using Wayland, it must be loaded through gdm. You can boot to a console and run &#8220;<strong>telinit 4</strong>&#8221; as root to start gdm after booting or edit <strong>/etc/inittab</strong> and change the run level from 3 to 4, and upon your next boot, gdm will load automatically.</p>
+<p>In order for GNOME to run using X11 or Wayland, it must be loaded through gdm. You can boot to a console and run &#8220;<strong>telinit 4</strong>&#8221; as root to start gdm after booting or edit <strong>/etc/inittab</strong> and change the run level from 3 to 4, and upon your next boot, gdm will load automatically.</p>
 <p>The only other bit of work required is adding a status bar to GNOME. After your first login to the session, open the <strong>Extensions</strong> application and enable the <strong>appIndicator status bar</strong>. If you do this fast enough the first login, the <strong>HP Printer Agent</strong> should load and be visible in your title bar. If you manage to do it after you get an error message and close it, have no fear, it will start on your next session.</p>
-<p>There are also 2 Slackware packages you must remove on a GNOME 43 system:</p>
-<blockquote><p>at-spi2-atk-2.38.0-x86_64-3.txz</p>
-<p>atk-2.38.0-x86_64-1.txz</p></blockquote>
-<p>The included <strong>at-spi2-core-2.46.0</strong> package combines them both into one library which includes the contents of both separate packages under one module.</p>
 <p>That should be enough to get one going with GNOME on Slackware. If you have questions, or things aren&#8217;t working the way you&#8217;d expect or at all for you, leave a comment explaining your issue, and I&#8217;ll do what I can to help.</p>
 	</div><!-- .entry-content -->
    <!-- End Wrapper -->
