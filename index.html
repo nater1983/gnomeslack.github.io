@@ -14,70 +14,38 @@ type='text/css'>
    <div id="wrapper">
      <h2>Gnome SlackBuilds</h2>
          <!-- Begin Content -->
-         <div id="content">
-           <p>These SlackBuilds are intended to provide a means for a user to
-           build and install the <a href="https://www.gnome.org">Gnome Desktop
-             Environment</a> on <a
-             href="http://www.slackware.com">Slackware Linux</a>.  Some of the goals
-           of the project are:</p>
-           <ol>
-             <li>Do not replace any stock Slackware packages unless
-             absolutely necessary (thus far, no packages need to be replaced);</li>
-             <li>Keep the upstream default theme and settings;</li>
-             <li>Try and minimize outside dependencies as much as possible;
-             and</li>
-             <li>Make it easy to build and install by using standard style
-             SlackBuild scripts and slack-desc and doinst.sh files that most
-             Slackware users have become familiar with by using the <a
-               href="https://www.slackbuilds.org">SlackBuilds</a> repository.</li></ol>
-           <p>The scripts are hosted in <a
-             href="https://reddoglinux.ddns.net/linux/gnome/42.x/source/">GFS</a> as well as 
-	   <a href="https://github.com/mac-a-r0ni/gfs-base">Github with mac-a-r0ni</a> and <a href="https://gitlab.com/slackernetuk">Gitlab with slackernetuk</a> so feel
-           free to test and offer suggestions, improvements, patches, etc.
-           Here are some obligatory screenshots of Gnome 42.6 with its default
-           theme and background running on Slackware64-Current:</p
-           <p>FAQ:</p>
-           <ul>
-           <li>Q: Are there binary packages?</li><li>A: Yes, there are
-             packages for Slackware 15.0 x86 and x86_64 available at:
-             <a
-               href="https://slackware.uk/gfs">https://slackware.uk/gfs</a>.  It is still advisable to
-             clone the git repo and build the packages yourself but these
-             packages are available for your convenience.</li>
-           <li>Q: How do i manage binary packages automatically?</li>
-	   <li>A: You can use <a href="http://slakfinder.org/slackpkg+.html">slackpkg+</a>
-	   to manage binary packages. Please see
-           <a href="http://slakfinder.org/slackpkg+/src/repositories.txt">supported repositories</a>.</li>
-	   <li>Q: Is it possible to try out Gnome in a live session for trial?</li>
-	   <li>A: Please have a look on <a href="https://slackware.lngn.net/gnome-43-1-liveslak/">
-	   Jloc's Slackware Live</a> project that includes Gnome Desktop.</li>
-           <li>Q: Do the scripts build and run on -current?</li><li>A: Yes,
-           based on our testing. These scripts are developed on
-           Slackware-current machines but binary packages will target for stable releases.
-	   Please be sure to read the README.TXT, KNOWN_ISSUES.TXT, and CURRENT.TXT
-	   documents as these are updated to note any potential problems or issues.</li>
-           <li>Q: So -current is officially supported?</li>
-           <li>A: Not exactly.  Since Slackware -current is a moving target,
-           there is no guarantee that Gnome SlackBuilds will build or work properly
-           on Slackware -current.  Only a full installation of the latest
-           Slackware release is officially supported. <br/>
-	   We do however tried to support -current as much as we can. Please use master
-	   branch for testing with -current.</li>
-           <li>Q: Who is behind Gnome SlackBuilds?</li>
-           <li>A: Nathaniel Russell, Jay Lanagan and Frank Honolka .  Please post
-           bug reports at the Github repo or send us an email at
-           naterussell83@gmail.com</li>
-	   <li>Q: Does this site have a backup?</li>
-	   <li>A: This site's source code is hosted at GitHub.</li>
-         </ul>
-	</div>
-		 <!-- End Content -->
-                 <div id="footer">Not affiliated with or endorsed by Slackware
-                 Linux, Patrick J. Volkerding, or the SlackBuilds.org project.
-               Slackware is a registered trademark of Patrick J. Volkerding
-               and Linux is a registered trademark of Linus Torvalds.  Use at
-             your own risk, YMMV, and all that.</div>
-   </div>
+        <header class="entry-header">
+		<h1 class="entry-title">Repo Usage/Installation</h1>	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content">
+		<p>Contained within these walls are some Slackware package repos. Currently, my long-term goal is to provide as much software as I can for <strong>slackwareaarch64</strong> (and <em>some</em> for x86_64). As of now, I&#8217;m offering builds of <a href="https://cinnamonslackbuilds.github.io/">Cinnamon (CSB)</a> and my own <a href="https://github.com/mac-a-r0ni/gnome_core-slackbuilds/">GNOME (GCS)</a> Desktop Environments. In the future I hope to offer Slackware-based ports of <a href="https://asahilinux.org/">Asahi Linux</a> packages, needed to run <strong>slackwareaarch64</strong> on <strong>Apple Silicon</strong>. My main focus will be providing the community with <strong>aarch64</strong> packages, but I&#8217;m also serving up a <a href="https://slackware.lngn.net/gnome-43-1-liveslak/"><strong>x86_64 LIVESLAK </strong></a>featuring a full GNOME 43 Desktop, as well as a package repo complimenting that.</p>
+<p>To use these packages, it&#8217;s recommended you install <a href="https://slakfinder.org/slackpkg+.html">slackpkg+</a> to manage 3rd party Slackware repositories on your systems. slackpkg+ has no arch requirements, as it&#8217;s all script based, so all systems can install and use it. My packages are all signed with my GPG Key and slackpkg+ will check and verify that for you during installs/updates.</p>
+<p>If you choose to install packages manually, without slackpkg+, that&#8217;s always an option, but keep in mind many of these packages are included in Slackware already, but we are going to be updating them. To that end you&#8217;ll need to ensure when installing them, you use &#8220;upgradepkg &#8211;install-new *.txz&#8221; on your package directory.</p>
+<p>Each repo has users/groups which you must add to your system to ensure the environments operate correctly. I have a simple script to add users/groups for GNOME <a href="https://slackware.lngn.net/pub/install_users_groups_for_gnome.sh">here</a>. Executing that script for either of the GNOME package sets provided here will set you up correctly.</p>
+<p>For the Cinnamon Desktop, you only need the <strong>colord</strong> user/group installed. You can edit that script or just add the colord user/group manually (but the other user/groups won&#8217;t hurt to have setup, either way).</p>
+<p>The avahi package needs it&#8217;s rc scripts started locally upon boot, they should both install exec but you&#8217;ll need to add them to your <strong>/etc/rc.d/rc.local</strong>:</p>
+<blockquote><p>if [ -x /etc/rc.d/rc.avahidaemon ]; then<br />
+/etc/rc.d/rc.avahidaemon start<br />
+fi</p>
+<p>if [ -x /etc/rc.d/rc.avahidnsconfd ]; then<br />
+/etc/rc.d/rc.avahidnsconfd start</p></blockquote>
+<p>and also in <strong>/etc/rc.d/rc.local.shutdown</strong>: (if doesn&#8217;t exist, create it)</p>
+<blockquote><p>if [ -x /etc/rc.d/rc.avahidaemon ]; then<br />
+/etc/rc.d/rc.avahidaemon stop<br />
+fi</p>
+<p>if [ -x /etc/rc.d/rc.avahidnsconfd ]; then<br />
+/etc/rc.d/rc.avahidnsconfd stop</p></blockquote>
+<p>Ensure all four of those files are <strong>chmod +x</strong> as well so the daemon starts upon boot.</p>
+<p>You also need to remove a erroneous flag for gdm from <strong>/etc/rc.d/rc.4</strong>, there are two statements with gdm commands stating &#8220;<strong>gdm -nodaemon</strong>&#8221; you MUST remove the &#8220;<strong>-nodaemon</strong>&#8221; from the commands or GDM will not run at all. Please don&#8217;t be that guy.</p>
+<p>In order for GNOME to run using Wayland, it must be loaded through gdm. You can boot to a console and run &#8220;<strong>telinit 4</strong>&#8221; as root to start gdm after booting or edit <strong>/etc/inittab</strong> and change the run level from 3 to 4, and upon your next boot, gdm will load automatically.</p>
+<p>The only other bit of work required is adding a status bar to GNOME. After your first login to the session, open the <strong>Extensions</strong> application and enable the <strong>appIndicator status bar</strong>. If you do this fast enough the first login, the <strong>HP Printer Agent</strong> should load and be visible in your title bar. If you manage to do it after you get an error message and close it, have no fear, it will start on your next session.</p>
+<p>There are also 2 Slackware packages you must remove on a GNOME 43 system:</p>
+<blockquote><p>at-spi2-atk-2.38.0-x86_64-3.txz</p>
+<p>atk-2.38.0-x86_64-1.txz</p></blockquote>
+<p>The included <strong>at-spi2-core-2.46.0</strong> package combines them both into one library which includes the contents of both separate packages under one module.</p>
+<p>That should be enough to get one going with GNOME on Slackware. If you have questions, or things aren&#8217;t working the way you&#8217;d expect or at all for you, leave a comment explaining your issue, and I&#8217;ll do what I can to help.</p>
+	</div><!-- .entry-content -->
    <!-- End Wrapper -->
 </body>
 </html>
